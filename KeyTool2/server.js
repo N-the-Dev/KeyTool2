@@ -17,9 +17,9 @@ app.get("/api/key", (req, res) => {
   // Lấy danh sách key từ biến môi trường VIP_KEYS
   let keys = [];
   try {
-    keys = JSON.parse(process.env.VIP_KEYS);
+    keys = JSON.parse(process.env.Key_Vip);
   } catch (err) {
-    return res.status(500).json({ error: "Lỗi định dạng VIP_KEYS" });
+    return res.status(500).json({ error: "Lỗi định dạng Key Vip" });
   }
 
   // Trả về danh sách key dạng JSON
@@ -28,3 +28,4 @@ app.get("/api/key", (req, res) => {
 
 // Chạy server
 app.listen(PORT, () => console.log(`🚀 Server is running on port ${PORT}`));
+
